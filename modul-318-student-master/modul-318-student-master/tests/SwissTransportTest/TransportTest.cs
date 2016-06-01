@@ -5,13 +5,13 @@ namespace SwissTransport
     [TestClass]
     public class TransportTest
     {
-        private ITransport testee;
+        private ITransport _testee;
 
         [TestMethod]
         public void Locations()
         {
-            testee = new Transport();
-            var stations = testee.GetStations("Sursee,");
+            _testee = new Transport();
+            var stations = _testee.GetStations("Sursee,");
 
             Assert.AreEqual(50, stations.StationList.Count);
         }
@@ -19,8 +19,8 @@ namespace SwissTransport
         [TestMethod]
         public void StationBoard()
         {
-            testee = new Transport();
-            var stationBoard = testee.GetStationBoard("Sursee", "8502007");
+            _testee = new Transport();
+            var stationBoard = _testee.GetStationBoard("Sursee", "8502007");
 
             Assert.IsNotNull(stationBoard);
         }
@@ -28,8 +28,8 @@ namespace SwissTransport
         [TestMethod]
         public void Connections()
         {
-            testee = new Transport();
-            var connections = testee.GetConnections("Sursee", "Luzern");
+            _testee = new Transport();
+            var connections = _testee.GetConnections("Sursee", "Luzern");
 
             Assert.IsNotNull(connections);
         }
